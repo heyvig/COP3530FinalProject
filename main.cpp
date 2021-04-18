@@ -52,7 +52,7 @@ vector<Movie> GetMoviesFromCVS(string filepath) {
 	return movies;
 }
 
-void PrintMovies(vector<Movie> movies) {
+void PrintMoviesSort(vector<Movie> movies) {
 	if (movies.size() > 10) {
 		for (int i = 0; i < 10; i++) {
 			cout << movies[i].title << ", ";
@@ -73,6 +73,18 @@ void PrintMovies(vector<Movie> movies) {
 			cout << movies[i].country << endl;
 		}
 	}
+}
+void PrintMoviesSearch(vector<Movie> movies) {
+
+		for (int i = 0; i < movies.size(); i++) {
+			cout << movies[i].title << ", ";
+			cout << movies[i].year << ", ";
+			cout << movies[i].rating << ", ";
+			cout << movies[i].genre << ", ";
+			cout << movies[i].duration << ", ";
+			cout << movies[i].country << endl;
+		}
+	
 }
 //Selection Sorts
 vector<Movie> selectionSortYear(vector<Movie> movies) { //ascending sort good
@@ -161,6 +173,7 @@ vector<Movie> findRangeRating(int start, int end, vector<Movie> sorted) {
 	}
 	return r;
 }
+
 int BinarySearchyear(vector<Movie> sortedByYear, int left, int right, int x) {
 	if (right >= 1) {
 		int mid = left + (right - left) / 2;
@@ -199,6 +212,7 @@ vector<Movie> LinearfindTitle(string s, vector<Movie> sorted) {
 	}
 	return r;
 }
+
 vector<Movie> LinearfindGenre(string s, vector<Movie> sorted) {
 	vector<Movie> r;
 	for (int i = 0; i < sorted.size(); i++) {
@@ -209,6 +223,7 @@ vector<Movie> LinearfindGenre(string s, vector<Movie> sorted) {
 	}
 	return r;
 }
+
 vector<Movie> LinearfindYear(int year, vector<Movie> sorted) {
 	vector<Movie> r;
 	for (int i = 0; i < sorted.size(); i++) {
@@ -322,7 +337,7 @@ int main() {
 			cout << "What Title would you like to find?" << endl;
 			cin >> str;
 			vector<Movie> movies1 = LinearfindTitle(str, movies);
-			PrintMovies(movies1);
+			PrintMoviesSearch(movies1);
 		}
 		else if (choice1 == 1) { ////////////////////////////////////////search by country
 
@@ -333,7 +348,7 @@ int main() {
 			cout << "What Genre would you like to find?" << endl;
 			cin >> str;
 			vector<Movie> movies1 = LinearfindGenre(str, movies);
-			PrintMovies(movies1);
+			PrintMoviesSearch(movies1);
 		}
 		else if (choice1 == 3) {/////////////////////////////////////////search by duration
 			int timestart;
@@ -344,7 +359,7 @@ int main() {
 			cin >> timeend;
 			vector<Movie> movies1 = findRangeDuration(timestart, timeend, movies);
 			movies1 = bubbleSortDuration(movies1);
-			PrintMovies(movies1);
+			PrintMoviesSearch(movies1);
 		}
 		else if (choice1 == 4) {/////////////////////////////////////////search by rating
 			int ratestart;
@@ -355,7 +370,7 @@ int main() {
 			cin >> rateend;
 			vector<Movie> movies1 =findRangeRating(ratestart, rateend, movies);
 			movies1 = bubbleSortRating(movies1);
-			PrintMovies(movies1);
+			PrintMoviesSearch(movies1);
 		}
 		else if (choice1 == 5) {/////////////////////////////////////////search by year
 			int yearstart;
@@ -366,7 +381,7 @@ int main() {
 			cin >> yearend;
 			vector<Movie> movies1 = findRangeYear(yearstart, yearend, movies);
 			movies1 = bubbleSortYear(movies1);
-			PrintMovies(movies1);
+			PrintMoviesSearch(movies1);
 		}
 	}
 	else if (choice == 1) { //////////////////////////////////////////////////////////////Sort CLI
@@ -378,17 +393,17 @@ int main() {
 		cin >> choice1;
 		if (choice1 == 0) { ////////////////////////////////////////////////sort by year
 			vector<Movie> movies1 = selectionSortYear(movies);
-			PrintMovies(movies1);
+			PrintMoviesSort(movies1);
 
 		}
 		else if (choice1 == 1) {/////////////////////////////////////////////sort by rating
 			vector<Movie> movies2 = bubbleSortRating(movies);
-			PrintMovies(movies2);
+			PrintMoviesSort(movies2);
 
 		}
 		else if (choice1 == 2) {//////////////////////////////////////////////sort by duration
 			vector<Movie> movies3 = bubbleSortDuration(movies);
-			PrintMovies(movies3);
+			PrintMoviesSort(movies3);
 		}
 	}
 	else if (choice == 2) {
@@ -410,5 +425,6 @@ int main() {
 	else {
 		cout << "Incorrect input. Please restart program" << endl;
 	}
+
 	return 0;
 }
