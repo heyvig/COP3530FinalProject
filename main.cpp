@@ -53,8 +53,8 @@ vector<Movie> GetMoviesFromCVS(string filepath) {
 }
 
 void PrintMoviesSort(vector<Movie> movies) {
-	if (movies.size() > 10) {
-		for (int i = 0; i < 10; i++) {
+	if (movies.size() > 10) { //if the movie list is more than the top ten
+		for (int i = movies.size()-1; i > movies.size()-10; i--) {
 			cout << movies[i].title << ", ";
 			cout << movies[i].year << ", ";
 			cout << movies[i].rating << ", ";
@@ -63,8 +63,9 @@ void PrintMoviesSort(vector<Movie> movies) {
 			cout << movies[i].country << endl;
 		}
 	}
-	else {
-		for (int i = 0; i < movies.size(); i++) {
+	
+	else { //less than ten
+		for (int i = movies.size()-1; i > 0; i++) {
 			cout << movies[i].title << ", ";
 			cout << movies[i].year << ", ";
 			cout << movies[i].rating << ", ";
@@ -86,6 +87,7 @@ void PrintMoviesSearch(vector<Movie> movies) {
 		}
 	
 }
+
 //Selection Sorts
 vector<Movie> selectionSortYear(vector<Movie> movies) { //ascending sort good
 
@@ -276,9 +278,10 @@ void compareSelectionandBubble(vector<Movie> movies) {
 }
 
 void comparebinaryandexponentialandlinear(vector<Movie> movies) {
+	
 	auto start1 = high_resolution_clock::now();
 	//temp returned is the first year with the 1914
-	int temp = BinarySearchyear(movies, 0, movies.size()-1, 1914);
+	int temp = BinarySearchyear(movies, 0, movies.size()-1, 1911);
 	auto stop1 = high_resolution_clock::now();
 
 
@@ -287,7 +290,7 @@ void comparebinaryandexponentialandlinear(vector<Movie> movies) {
 		<< duration1.count() << " microseconds" << endl;
 
 	auto start2 = high_resolution_clock::now();
-	int j = exponentialSearchyear(movies, movies.size(), 1914);
+	int j = exponentialSearchyear(movies, movies.size(), 1911);
 	auto stop2 = high_resolution_clock::now();
 
 	auto duration2 = duration_cast<microseconds>(stop2 - start2);
@@ -295,7 +298,7 @@ void comparebinaryandexponentialandlinear(vector<Movie> movies) {
 		<< duration2.count() << " microseconds" << endl;
 
 	auto start3 = high_resolution_clock::now();
-	vector<Movie> movies3 = LinearfindYear(1914, movies);
+	vector<Movie> movies3 = LinearfindYear(1911, movies);
 	auto stop3 = high_resolution_clock::now();
 
 	auto duration3 = duration_cast<microseconds>(stop3 - start3);
@@ -312,119 +315,126 @@ int main() {
 	vector<Movie> movies = GetMoviesFromCVS(filename);
 	//vector<Movie> sortedMovi
 
-	int choice;
-	cout << "Would you like to search or sort movie categories?" << endl;
-	cout << "Or would you like to compare the run times of search or sort algorithms?" << endl;
-	cout << "0 - search" << endl;
-	cout << "1 - sort" << endl;
-	cout << "2 - Algorithm Complexities" << endl;
+	while(true){
+		int choice;
+		cout << endl ;
+		cout << "Would you like to search or sort movie categories?" << endl;
+		cout << "Or would you like to compare the run times of search or sort algorithms?" << endl;
+		cout << "0 - search" << endl;
+		cout << "1 - sort" << endl;
+		cout << "2 - Algorithm Complexities" << endl;
+		cout << "3 - Exit Program" << endl;
 
-	cin >> choice;
+		cin >> choice;
 
-	int choice1 ;
-	if (choice == 0) { //////////////////////////////////////////////////////////////////Search CLI
-		cout << "What category would you like to search by?" << endl;
-		//we can search by: title, country, genre
-		cout << "0 - Title" << endl;
-		cout << "1 - Country" << endl;
-		cout << "2 - Genre" << endl;
-		cout << "3 - Duration" << endl;
-		cout << "4 - Rating" << endl;
-		cout << "5 - Year" << endl;
-		cin >> choice1;
-		if (choice1 == 0) { //////////////////////////////////////////////search by title
-			string str;
-			cout << "What Title would you like to find?" << endl;
-			cin >> str;
-			vector<Movie> movies1 = LinearfindTitle(str, movies);
-			PrintMoviesSearch(movies1);
+		int choice1;
+		if (choice == 0) { //////////////////////////////////////////////////////////////////Search CLI
+			cout << "What category would you like to search by?" << endl;
+			//we can search by: title, country, genre
+			cout << "0 - Title" << endl;
+			cout << "1 - Genre" << endl;
+			cout << "2 - Duration" << endl;
+			cout << "3 - Rating" << endl;
+			cout << "4 - Year" << endl;
+			cin >> choice1;
+			if (choice1 == 0) { //////////////////////////////////////////////search by title
+				string str;
+				cout << "What Title would you like to find?" << endl;
+				cin >> str;
+				vector<Movie> movies1 = LinearfindTitle(str, movies);
+				PrintMoviesSearch(movies1);
+			}
+			else if (choice1 == 1) {/////////////////////////////////////////search by genre
+				string str;
+				cout << "What Genre would you like to find?" << endl;
+				cin >> str;
+				vector<Movie> movies1 = LinearfindGenre(str, movies);
+				PrintMoviesSearch(movies1);
+			}
+			else if (choice1 == 2) {/////////////////////////////////////////search by duration
+				int timestart;
+				int timeend;
+				cout << "what is the minimum desired duration?" << endl;
+				cin >> timestart;
+				cout << "what is the maximum desired duration?" << endl;
+				cin >> timeend;
+				vector<Movie> movies1 = findRangeDuration(timestart, timeend, movies);
+				movies1 = bubbleSortDuration(movies1);
+				PrintMoviesSearch(movies1);
+			}
+			else if (choice1 == 3) {/////////////////////////////////////////search by rating
+				int ratestart;
+				int rateend;
+				cout << "what is the minimum desired rating?" << endl;
+				cin >> ratestart;
+				cout << "what is the maximum desired rating?" << endl;
+				cin >> rateend;
+				vector<Movie> movies1 = findRangeRating(ratestart, rateend, movies);
+				movies1 = bubbleSortRating(movies1);
+				PrintMoviesSearch(movies1);
+			}
+			else if (choice1 == 4) {/////////////////////////////////////////search by year
+				int yearstart;
+				int yearend;
+				cout << "what is the oldest desired release year?" << endl;
+				cin >> yearstart;
+				cout << "what is the newest desired release year?" << endl;
+				cin >> yearend;
+				vector<Movie> movies1 = findRangeYear(yearstart, yearend, movies);
+				movies1 = bubbleSortYear(movies1);
+				PrintMoviesSearch(movies1);
+			}
 		}
-		else if (choice1 == 1) { ////////////////////////////////////////search by country
+		else if (choice == 1) { //////////////////////////////////////////////////////////////Sort CLI
+			cout << "What category would you like to sort by?" << endl;
+			//we can search by: year, rating, duration
+			cout << "0 - Year" << endl;
+			cout << "1 - Rating" << endl;
+			cout << "2 - Duration" << endl;
+			cin >> choice1;
+			if (choice1 == 0) { ////////////////////////////////////////////////sort by year
+				vector<Movie> movies1 = selectionSortYear(movies);
+				PrintMoviesSort(movies1);
 
+			}
+			else if (choice1 == 1) {/////////////////////////////////////////////sort by rating
+				vector<Movie> movies2 = bubbleSortRating(movies);
+				PrintMoviesSort(movies2);
 
+			}
+			else if (choice1 == 2) {//////////////////////////////////////////////sort by duration
+				vector<Movie> movies3 = bubbleSortDuration(movies);
+				PrintMoviesSort(movies3);
+			}
 		}
-		else if (choice1 == 2) {/////////////////////////////////////////search by genre
-			string str;
-			cout << "What Genre would you like to find?" << endl;
-			cin >> str;
-			vector<Movie> movies1 = LinearfindGenre(str, movies);
-			PrintMoviesSearch(movies1);
+		else if (choice == 2) {
+			cout << "What algorithm pairing would you like to compare the run times of?" << endl;
+			//compare: selection sort and 
+			cout << "0 - Selection and Bubble Sort" << endl;
+			cout << "1 - Binary, Exponential, and Linear search" << endl;
+			cin >> choice1;
+			if (choice1 == 0) {
+				//compare bubble and selection with year
+				cout << "Comparing the selection and bubble sort using the movies years:" << endl;
+				compareSelectionandBubble(movies);
+			}
+			else if (choice1 == 1) {
+				//compare binary and exponential search
+				cout << "Sorting Movies" << endl;
+				vector<Movie> temp = bubbleSortYear(movies);
+				cout << "Comparing the binary, exponential and linear search using the movies years:" << endl;
+				comparebinaryandexponentialandlinear(temp);
+			}
 		}
-		else if (choice1 == 3) {/////////////////////////////////////////search by duration
-			int timestart;
-			int timeend;
-			cout << "what is the minimum desired duration?" << endl;
-			cin >> timestart;
-			cout << "what is the maximum desired duration?" << endl;
-			cin >> timeend;
-			vector<Movie> movies1 = findRangeDuration(timestart, timeend, movies);
-			movies1 = bubbleSortDuration(movies1);
-			PrintMoviesSearch(movies1);
+		else if (choice == 3) {
+			break;
 		}
-		else if (choice1 == 4) {/////////////////////////////////////////search by rating
-			int ratestart;
-			int rateend;
-			cout << "what is the minimum desired rating?" << endl;
-			cin >> ratestart;
-			cout << "what is the maximum desired rating?" << endl;
-			cin >> rateend;
-			vector<Movie> movies1 =findRangeRating(ratestart, rateend, movies);
-			movies1 = bubbleSortRating(movies1);
-			PrintMoviesSearch(movies1);
+		else {
+			cout << "Incorrect input. Please restart program" << endl;
 		}
-		else if (choice1 == 5) {/////////////////////////////////////////search by year
-			int yearstart;
-			int yearend;
-			cout << "what is the oldest desired release year?" << endl;
-			cin >> yearstart;
-			cout << "what is the newest desired release year?" << endl;
-			cin >> yearend;
-			vector<Movie> movies1 = findRangeYear(yearstart, yearend, movies);
-			movies1 = bubbleSortYear(movies1);
-			PrintMoviesSearch(movies1);
-		}
-	}
-	else if (choice == 1) { //////////////////////////////////////////////////////////////Sort CLI
-		cout << "What category would you like to sort by?" << endl;
-		//we can search by: year, rating, duration
-		cout << "0 - Year" << endl;
-		cout << "1 - Rating" << endl;
-		cout << "2 - Duration" << endl;
-		cin >> choice1;
-		if (choice1 == 0) { ////////////////////////////////////////////////sort by year
-			vector<Movie> movies1 = selectionSortYear(movies);
-			PrintMoviesSort(movies1);
 
-		}
-		else if (choice1 == 1) {/////////////////////////////////////////////sort by rating
-			vector<Movie> movies2 = bubbleSortRating(movies);
-			PrintMoviesSort(movies2);
-
-		}
-		else if (choice1 == 2) {//////////////////////////////////////////////sort by duration
-			vector<Movie> movies3 = bubbleSortDuration(movies);
-			PrintMoviesSort(movies3);
-		}
-	}
-	else if (choice == 2) {
-		cout << "What algorithm pairing would you like to compare the run times of?" << endl;
-		//compare: selection sort and 
-		cout << "0 - selection and bubble" << endl;
-		cout << "1 - binary, exponential, and linear search" << endl;
-		cin >> choice1;
-		if (choice1 == 0) {
-			//compare bubble and selection with year
-			cout << "Comparing the selection and bubble sort using the movies years:" << endl;
-			compareSelectionandBubble(movies);
-		}
-		else if (choice1 == 1) {
-			//compare binary and exponential search
-			comparebinaryandexponentialandlinear(movies);
-		}
-	}
-	else {
-		cout << "Incorrect input. Please restart program" << endl;
 	}
 
 	return 0;
 }
+
