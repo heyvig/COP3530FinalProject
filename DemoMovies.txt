@@ -1,0 +1,100 @@
+Miss Jerry	1894	6	Romance	45	USA
+The Story of the Kelly Gang	1906	9	"Biography, Crime, Drama"	70	Australia
+Den sorte dr?Åm	1911	1	Drama	53	"Germany, Denmark"
+Cleopatra	1912	3	"Drama, History"	100	USA
+L'Inferno	1911	10	"Adventure, Drama, Fantasy"	68	Italy
+"From the Manger to the Cross; or, Jesus of Nazareth"	1912	1	"Biography, Drama"	60	USA
+Madame DuBarry	1919	3	"Biography, Drama, Romance"	85	Germany
+Quo Vadis?	1913	5	"Drama, History"	120	Italy
+Independenta Romaniei	1912	2	"History, War"	120	Romania
+Richard III	1912	6	Drama	55	"France, USA"
+Atlantis	1913	7	Drama	121	Denmark
+Fant?Æmas - ?? l'ombre de la guillotine	1913	5	"Crime, Drama"	54	France
+Il calvario di una madre	1913	2	Drama	96	Sweden
+Juve contre Fant?Æmas	1913	7	"Crime, Drama"	61	France
+Ma l'amor mio non muore...	1914	6	Drama	90	Italy
+Maudite soit la guerre	1914	10	"Drama, War"	50	Belgium
+Le mort qui tue	1913	9	"Crime, Drama, Mystery"	90	France
+Amore di madre	1914	10	Drama	55	USA
+Lo studente di Praga	1913	9	"Drama, Fantasy, Horror"	85	Germany
+Traffic in Souls	1913	4	"Crime, Drama"	88	USA
+Gli ultimi giorni di Pompei	1913	8	"Adventure, Drama"	88	Italy
+Assunta Spina	1915	3	Drama	72	Italy
+The Avenging Conscience: or 'Thou Shalt Not Kill'	1914	4	"Crime, Drama, Horror"	78	USA
+The Bargain	1914	10	Western	70	USA
+Cabiria	1914	7	"Adventure, Drama, History"	148	Italy
+Cinderella	1914	3	"Fantasy, Drama"	52	USA
+L'enfant de Paris	1913	8	"Crime, Drama"	124	France
+Fant?Æmas contre Fant?Æmas	1914	7	"Crime, Drama"	59	France
+A Florida Enchantment	1914	2	Comedy	63	USA
+Der Golem	1915	3	Horror	60	Germany
+Det hemmelighedsfulde X	1914	8	"Drama, Mystery"	84	Denmark
+"His Majesty, the Scarecrow of Oz"	1914	8	"Family, Fantasy, Adventure"	59	USA
+Hypocrites	1915	2	Drama	54	USA
+In the Land of the Head Hunters	1914	2	"Drama, History"	65	"USA, Canada"
+Judith of Bethulia	1914	1	Drama	61	USA
+The Patchwork Girl of Oz	1914	10	"Adventure, Family, Fantasy"	81	USA
+The Perils of Pauline	1914	5	"Action, Adventure, Drama"	199	USA
+The Squaw Man	1914	2	"Action, Drama, Romance"	74	USA
+La madonnina del porto	1914	6	Drama	80	USA
+Tillie's Punctured Romance	1914	6	Comedy	82	USA
+A tolonc	1915	7	Drama	67	Hungary
+Uncle Tom's Cabin	1914	10	Drama	54	USA
+The Virginian	1914	1	Western	55	USA
+The Wishing Ring: An Idyll of Old England	1914	10	"Comedy, Drama"	54	USA
+The Wrath of the Gods	1914	1	"Drama, Romance"	56	USA
+Alias Jimmy Valentine	1915	1	"Crime, Drama"	65	USA
+Alice in Wonderland	1915	9	"Adventure, Family, Fantasy"	52	USA
+Nascita di una nazione	1915	3	"Drama, History, War"	195	USA
+Carmen	1915	8	Drama	59	USA
+The Cheat	1915	10	"Drama, Romance"	59	USA
+The Coward	1915	8	"Drama, History, War"	77	USA
+La vampira	1915	9	Drama	67	USA
+The Golden Chance	1915	5	Drama	74	USA
+H??vnens Nat	1916	4	"Crime, Drama, Horror"	100	Denmark
+The Italian	1915	9	Drama	72	USA
+Maciste	1915	7	Adventure	67	Italy
+Martyrs of the Alamo	1915	5	"Drama, History, War"	71	USA
+The Nigger	1915	6	Drama	50	USA
+Posle smerti	1915	4	Drama	46	Russia
+Rapsodia satanica	1917	9	"Drama, Fantasy, Horror"	55	Italy
+La rigenerazione	1915	1	"Biography, Crime, Drama"	72	USA
+I vampiri	1915	6	"Action, Adventure, Crime"	421	France
+Young Romance	1915	8	Comedy	59	USA
+"20,000 Leagues Under the Sea"	1916	9	"Action, Adventure, Sci-Fi"	105	USA
+The Children in the House	1916	3	Drama	50	USA
+Civilization	1915	9	Drama	85	USA
+The Devil's Needle	1916	6	Drama	59	USA
+D??dskyssen	1916	2	"Comedy, Crime, Drama"	60	Sweden
+Flirting with Fate	1916	8	"Adventure, Comedy"	57	USA
+Going Straight	1916	9	"Crime, Drama"	60	USA
+The Good Bad-Man	1916	6	"Romance, Western"	50	USA
+Gretchen the Greenhorn	1916	3	"Crime, Drama, Romance"	58	USA
+The Half-Breed	1916	6	Western	73	USA
+Hell's Hinges	1916	7	"Romance, Western"	64	USA
+His Picture in the Papers	1916	6	Comedy	62	USA
+Hoodoo Ann	1916	5	"Comedy, Drama, Romance"	65	USA
+Intolerance	1916	2	"Drama, History"	163	USA
+Judex	1916	1	"Adventure, Crime"	300	France
+The Matrimaniac	1916	8	"Comedy, Romance"	46	USA
+Pikovaya dama	1916	5	"Drama, Fantasy, Horror"	63	Russia
+Reggie Mixes In	1916	4	"Action, Comedy, Drama"	50	USA
+The Return of Draw Egan	1916	7	"Action, Adventure, Romance"	50	USA
+Schuhpalast Pinkus	1916	10	Comedy	45	Germany
+Sherlock Holmes	1916	8	Mystery	116	USA
+Shoes	1916	7	Drama	60	USA
+Snow White	1916	5	"Fantasy, Romance"	63	USA
+The Social Secretary	1916	1	"Comedy, Drama"	52	USA
+Vingarne	1916	5	Drama	69	Sweden
+Where Are My Children?	1916	8	Drama	62	USA
+'49-'17	1917	4	"Drama, Western"	61	USA
+Bucking Broadway	1917	7	Western	53	USA
+Cleopatra	1917	2	"Biography, Drama, History"	125	USA
+Furcht	1917	10	Horror	72	Germany
+A Girl's Folly	1917	6	Comedy	65	USA
+L'astronave	1918	2	"Adventure, Fantasy, Sci-Fi"	97	Denmark
+Joan the Woman	1916	2	"Adventure, Drama, History"	138	USA
+The Little American	1917	2	"Drama, Romance, War"	80	USA
+The Little Princess	1917	9	Drama	62	USA
+Desiderata	1917	6	Drama	80	France
+A Modern Musketeer	1917	10	"Adventure, Comedy, Western"	68	USA
